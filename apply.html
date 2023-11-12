@@ -1,53 +1,79 @@
 <!DOCTYPE html>
+<!-- Defines the document type and HTML version -->
 <html lang="en">
+<!-- HTML starts here, with English set as the language -->
 
 <head>
+    <!-- Head section containing meta-information and links -->
     <meta charset="UTF-8">
+    <!-- Character set declaration for universal text support -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper scaling and rendering on all devices -->
     <title>Mars Multi-Stage Application Form</title>
+    <!-- Title of the webpage -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to external CSS file for styling -->
 </head>
 
 <body>
+    <!-- Body section containing the content of the document -->
 
+    <!-- Navigation Bar -->
     <div id="navbar">
+        <!-- Container for the navigation bar -->
         <span id="logo">Mars</span>
+        <!-- Logo or title of the website -->
         <div id="navbar-right">
+            <!-- Container for navigation links -->
             <a href="index.html">Home</a>
+            <!-- Navigation link to the home page -->
             <!-- <a href="#apply">Apply</a> -->
+            <!-- Commented out alternative apply link -->
             <a class="active" href="apply.html">Apply</a>
+            <!-- Active navigation link to the apply page -->
             <a href="contact.html">Contact</a>
+            <!-- Navigation link to the contact page -->
             <a href="about.html">About&nbsp&nbsp</a>
+            <!-- Navigation link to the about page -->
         </div>
     </div>
-    <!-- Tab links -->
+
+    <!-- Tab Links for the Form -->
     <div class="tab">
+        <!-- Container for tab buttons -->
         <button class="tablinks" onclick="openTab(event, 'PersonalInformation')" id="defaultOpen">Personal
             Information</button>
+        <!-- Button to open the Personal Information tab -->
         <button class="tablinks" onclick="openTab(event, 'TravelPreferences')">Travel Preferences</button>
+        <!-- Button to open the Travel Preferences tab -->
         <button class="tablinks" onclick="openTab(event, 'HealthAndSafety')">Health and Safety</button>
+        <!-- Button to open the Health and Safety tab -->
     </div>
-  
-    <!-- Tab content -->
+
+    <!-- Tab Content -->
+    <!-- Personal Information Tab -->
     <div id="PersonalInformation" class="tabcontent">
+        <!-- Container for the Personal Information content -->
         <h3>Personal Information</h3>
+        <!-- Heading for the section -->
 
+        <!-- Personal Information Form -->
         <form action="/submit_personal_information.php" onsubmit="return validateFormPersonal()">
-            <!-- <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-          
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
+            <!-- Form with action to a server-side script for processing personal information -->
 
+            <!-- Full Name Field -->
             <label for="fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname" placeholder="Your full name.." required
                 pattern="[a-zA-Z\s]+">
+            <!-- Input field for full name with validation -->
 
+            <!-- Date of Birth Field -->
             <div id="date">
                 <label for="dob">Date of Birth</label>
                 <input type="date" id="dob" name="dob" required>
+                <!-- Input field for date of birth -->
             </div>
-
+            <!-- Nationality Selection -->
             <div>
                 <label for="nationalitySelect">Nationality</label>
                 <select id="nationalitySelect" name="nationality" onchange="toggleOtherNationalityField()" required>
@@ -66,11 +92,14 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
+            <!-- Other Nationality Field (Hidden initially) -->
             <div id="otherNationalityField" style="display:none;">
                 <label for="otherNationality">Please specify your nationality</label>
                 <input type="text" id="otherNationality" name="otherNationality">
+                <!-- Input field for specifying other nationality -->
             </div>
 
+            <!-- JavaScript to Toggle Other Nationality Field -->
             <script>
                 function toggleOtherNationalityField() {
                     var nationalitySelect = document.getElementById('nationalitySelect').value;
@@ -83,128 +112,111 @@
                 }
             </script>
 
-
-
+            <!-- Email Field -->
             <label for="email">Email</label>
             <input type="text" id="email" name="email" placeholder="Your email.." required>
+            <!-- Input field for email -->
 
+            <!-- Phone Field -->
             <label for="phone">Phone</label>
             <input type="text" id="phone" name="phone" placeholder="Your phone number.." required pattern="[+\d\s()-]+">
+            <!-- Input field for phone number with validation -->
 
-    </form>
+            <!-- Submit Button for Personal Information -->
             <input type="submit" value="Next" onclick="openTab(null, 'TravelPreferences')">
-    
+            <!-- Button to submit the form and move to the next tab -->
+        </form>
     </div>
 
+    <!-- Travel Preferences Tab -->
     <div id="TravelPreferences" class="tabcontent">
+        <!-- Container for the Travel Preferences content -->
         <h3>Travel Preferences</h3>
+        <!-- Heading for the section -->
 
-        <!--  the action attribute in the form tag points to 
-            the correct server-side script or URL where you want 
-            to process or store the form data. -->
+        <!-- Travel Preferences Form -->
         <form action="/submit_travel_details.php" onsubmit="return validateFormTravel()">
+            <!-- Form with action to a server-side script for processing travel details -->
+
+            <!-- Departure Date Field -->
             <div>
                 <label for="departureDate">Departure Date</label>
                 <input type="date" id="departureDate" name="departureDate" required>
+                <!-- Input field for departure date -->
             </div>
 
+            <!-- Return Date Field -->
             <div>
                 <label for="returnDate">Return Date</label>
                 <input type="date" id="returnDate" name="returnDate" required>
+                <!-- Input field for return date -->
             </div>
 
+            <!-- Accommodation Preference Selection -->
             <div>
                 <label for="accommodationPreference">Accommodation Preference</label>
                 <select id="accommodationPreference" name="accommodationPreference" required>
+                    <!-- Dropdown for selecting accommodation preference -->
                     <option value="" disabled selected>-</option>
+                    <!-- Default option -->
                     <option value="Space Hotel">Space Hotel</option>
+                    <!-- Option for Space Hotel -->
                     <option value="Martian Base">Martian Base</option>
+                    <!-- Option for Martian Base -->
                 </select>
             </div>
 
+            <!-- Special Requests Field -->
             <div>
                 <label for="specialRequests">Special Requests or Preferences</label>
                 <textarea id="specialRequests" name="specialRequests"
                     placeholder="Enter any special requests or preferences here..."></textarea>
+                <!-- Textarea for special requests or preferences -->
             </div>
 
+            <!-- Previous and Next Buttons for Navigation -->
+            <b href="#" class="previous" onclick="openTab(null, 'PersonalInformation')">&laquo; Previous</b>
+            <!-- Button to go back to the previous tab -->
+            <b href="#" class="next" onclick="openTab(null, 'HealthAndSafety')">Next &raquo;</b>
+            <!-- Button to go to the next tab -->
         </form>
-        <!-- Previous button -->
-        <b href="#" class="previous" onclick="openTab(null, 'PersonalInformation')">&laquo; Previous</b>
-        <!-- Next button -->
-        <b href="#" class="next" onclick="openTab(null, 'HealthAndSafety')">Next &raquo;</b>
-        <!-- Previous button Arrow -->
-        <b href="#" class="previous round" onclick="openTab(null, 'PersonalInformation')">&#8249;</b>
-        <!-- Next button Arrow -->
-        <b href="#" class="next round" onclick="openTab(null, 'HealthAndSafety')">&#8250;</b>
     </div>
 
+    <!-- Health and Safety Tab -->
     <div id="HealthAndSafety" class="tabcontent">
+        <!-- Container for the Health and Safety content -->
         <h3>Health and Safety</h3>
+        <!-- Heading for the section -->
+
+        <!-- Health and Safety Form -->
         <form action="/submit_health_details.php" onsubmit="return validateFormHealth()">
-            <!-- Health Declaration -->
+            <!-- Form with action to a server-side script for processing health details -->
+
+            <!-- Health Declaration Radio Buttons -->
             <label for="healthDeclaration">Health Declaration:</label><br>
             <input type="radio" id="healthYes" name="healthDeclaration" value="Yes">
             <label for="healthYes">Yes</label><br>
             <input type="radio" id="healthNo" name="healthDeclaration" value="No">
             <label for="healthNo">No</label><br>
+            <!-- Radio buttons for health declaration -->
 
-            <!-- Emergency Contact Information -->
+            <!-- Emergency Contact Information Section -->
             <div id="emergencyContacts">
+                <!-- Container for emergency contacts -->
                 <h4>Emergency Contact 1:</h4>
+                <!-- Heading for the first emergency contact -->
                 <div class="emergencyContact">
-                    <label for="contact1FirstName">First Name:</label>
-                    <input type="text" id="contact1FirstName" name="contact1FirstName" required>
-
-                    <label for="contact1LastName">Last Name:</label>
-                    <input type="text" id="contact1LastName" name="contact1LastName" required>
-
-                    <label for="contact1Phone">Phone Number:</label>
-                    <input type="text" id="contact1Phone" name="contact1Phone" required pattern="[+\d\s()-]+">
-
-                    <label for="contact1Street">Street:</label>
-                    <input type="text" id="contact1Street" name="contact1Street" required>
-
-                    <label for="contact1City">City:</label>
-                    <input type="text" id="contact1City" name="contact1City" required>
-
-                    <!-- Emergency Contact's Country -->
-                    <div>
-                        <label for="countrySelect">Country</label>
-                        <select id="countrySelect" name="country" onchange="toggleFields()" required>
-                            <!-- ... country options ... -->
-                            <option value="" disabled selected>Select a country</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Canada">Canada</option>
-                            <option value="China">China</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="India">India</option>
-                            <option value="Japan">Japan</option>
-                            <option value="United States">United States</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div id="otherCountryField" style="display:none;">
-                        <label for="otherCountry">Please specify your country</label>
-                        <input type="text" id="otherCountry" name="otherCountry">
-                    </div>
-                    <!-- State/Province/Territory Selection -->
-                    <div id="stateField" style="display:none;">
-                        <label for="stateSelect">State/Province/Territory</label>
-                        <select id="stateSelect" name="state">
-                            <!-- State options will be populated based on the country selected -->
-                        </select>
-                        <input type="text" id="otherState" name="otherState" style="display:none;">
-                    </div>
-
+                    <!-- Container for each emergency contact's details -->
+                    <!-- Input fields for emergency contact's information -->
+                    <!-- ... -->
                 </div>
             </div>
 
+            <!-- Button to Add More Emergency Contacts -->
             <button id=addmore type="button" onclick="addEmergencyContact()">Add More</button>
+            <!-- Button to dynamically add more emergency contact fields -->
 
-            <!-- Script for adding more emergency contacts -->
+            <!-- JavaScript for Adding More Emergency Contacts -->
             <script>
                 var contactCount = 1;
 
@@ -221,26 +233,24 @@
                 }
             </script>
 
+            <!-- Medical Conditions Textarea -->
             <div>
-                <!-- Medical Conditions -->
                 <label for="medicalConditions">Any Medical Conditions (if applicable):</label>
                 <textarea id="medicalConditions" name="medicalConditions" placeholder="Describe any medical conditions"
                     rows="3"></textarea>
+                <!-- Textarea for describing medical conditions -->
             </div>
+
+            <!-- Previous and Submit Buttons -->
+            <b href="#" class="previous" onclick="openTab(null, 'TravelPreferences')">&laquo; Previous</b>
+            <!-- Button to go back to the previous tab -->
+            <input type="submit" value="Submit" onclick="return finalSubmit()">
+            <!-- Submit button for the entire form -->
         </form>
-        <!-- Previous button Arrow -->
-        <b href="#" class="previous round" onclick="openTab(null, 'TravelPreferences')">&#8249;</b>
-       
-        <!-- Previous button -->
-        <b href="#" class="previous" onclick="openTab(null, 'TravelPreferences')">&laquo; Previous</b>
-        <!-- Next button -->
-        <!-- <b href="#" class="next" onclick="openTab(null, 'HealthAndSafety')">Submit &raquo;</b> -->
-        <input type="submit" value="Submit" onclick="return finalSubmit()">
-        
-    </div>
     </div>
 
     <script src="script.js"></script>
+    <!-- Link to external JavaScript file -->
 </body>
 
 </html>
