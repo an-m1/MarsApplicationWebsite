@@ -1,62 +1,71 @@
+/* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif; /* Sets the font for the entire page */
+    background-color: #f4f4f4; /* Light grey background color for the page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Enables flexbox layout for centering content */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Sets the height of the body to the full viewport height */
 }
 
+/* Contact Form Container Styles */
 .contact-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
-    margin-top: 300px; /* Adjust this value based on the height of your navbar */
+    background-color: white; /* White background for the contact form */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the container */
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Maximum width of the container */
+    margin-top: 300px; /* Top margin to adjust position based on navbar height */
 }
 
+/* Heading Style within Contact Container */
 .contact-container h2 {
-    color: #333;
-    margin-bottom: 20px;
+    color: #333; /* Dark grey color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
 }
 
+/* Form Group Styles */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Space below each form group */
 }
 
+/* Label Styles in Form Groups */
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Makes label a block element */
+    margin-bottom: 5px; /* Space below the label */
 }
 
+/* Input and Textarea Styles in Form Groups */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 100%; /* Full width of the parent element */
+    padding: 10px; /* Padding inside the input/textarea */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Rounded corners for the input/textarea */
 }
 
+/* Textarea Specific Styles */
 .form-group textarea {
-    height: 100px;
-    resize: vertical;
+    height: 100px; /* Fixed initial height */
+    resize: vertical; /* Allows vertical resizing only */
 }
 
+/* Button Styles */
 button {
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    background-color: #0056b3; /* Primary button color */
+    color: white; /* Text color for the button */
+    border: none; /* No border for the button */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 16px; /* Font size for the button text */
 }
 
+/* Button Hover Effect */
 button:hover {
-    background-color: #004494;
+    background-color: #004494; /* Darker shade for hover effect */
 }
