@@ -1,62 +1,69 @@
+/* General body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif; /* Sets the default font for the page */
+    background-color: #f4f4f4; /* Light grey background color for the entire page */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Sets the height of the body to be the full viewport height */
 }
 
+/* Styling for the 'about' section container */
 .about-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    margin-top: 250px; /* Adjust based on navbar height */
+    background-color: white; /* White background for the container */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the container */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Maximum width of the container */
+    margin-top: 250px; /* Top margin to adjust for navbar height */
 }
 
+/* Styling for headings within the 'about' container */
 .about-container h2, .about-container h3 {
-    color: #333;
+    color: #333; /* Dark grey color for the text */
 }
 
+/* Common margin for introductory and details sections */
 .intro, .details, .profile {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Bottom margin for spacing */
 }
 
+/* Paragraph styling within the details and profile sections */
 .details p, .profile ul {
-    line-height: 1.6;
-    margin: 15px; /* Margin around text */
+    line-height: 1.6; /* Line height for better readability */
+    margin: 15px; /* Margin around the text */
 }
 
+/* Styling for unordered lists in the profile section */
 .profile ul {
-    list-style-type: disc;
-    margin-left: 20px;
+    list-style-type: disc; /* Bullet points for the list items */
+    margin-left: 20px; /* Left margin for indentation */
 }
 
+/* Styling for list items in the profile section */
 .profile ul li {
-    margin-bottom: 10px; /* Margin between list items */
+    margin-bottom: 10px; /* Bottom margin between list items */
 }
 
-/* Footer Styles */
+/* Footer styles */
 .footer {
-    text-align: center;
-    padding: 20px;
-    /* background-color: #f2f2f2; */
-    background-color: transparent;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    font-size: 0.9em;
-    color: #333;
+    text-align: center; /* Center-aligns the text */
+    padding: 20px; /* Padding inside the footer */
+    background-color: transparent; /* Transparent background for the footer */
+    position: fixed; /* Fixes the footer to the bottom */
+    left: 0; /* Aligns the footer to the left */
+    bottom: 0; /* Positions the footer at the bottom */
+    width: 100%; /* Full width of the footer */
+    font-family: Arial, sans-serif; /* Font style for the footer */
+    font-size: 0.9em; /* Slightly smaller font size */
+    color: #333; /* Dark grey color for the text */
 }
 
+/* Additional body styling to avoid content overlap with the footer */
 body {
     margin: 0;
-    padding-bottom: 60px; /* Adjust based on footer height to avoid content overlap */
+    padding-bottom: 60px; /* Bottom padding to ensure content doesn't overlap with the footer */
 }
