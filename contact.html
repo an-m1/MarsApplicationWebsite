@@ -1,51 +1,85 @@
 <!DOCTYPE html>
+<!-- The declaration to define this document as HTML5 -->
+
 <html lang="en">
+<!-- HTML document starts, with English as the primary language -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Character encoding set to UTF-8 for international character support -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
     <title>Mars Multi-Stage Application Form</title>
+    <!-- Title of the webpage -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to an external stylesheet for general styles -->
     <link rel="stylesheet" href="contact.css">
+    <!-- Link to an external stylesheet specifically for the contact page -->
 </head>
 
 <body>
+    <!-- Body of the webpage starts here -->
 
     <div id="navbar">
+        <!-- Navigation bar container -->
         <span id="logo">Mars</span>
+        <!-- Logo or brand name for the site -->
         <div id="navbar-right">
+            <!-- Container for navigation links aligned to the right -->
             <a href="index.html">Home</a>
+            <!-- Navigation link to the home page -->
             <a href="apply.html">Apply</a>
+            <!-- Navigation link to the application page -->
             <a class="active" href="contact.html">Contact</a>
+            <!-- Active navigation link to the current contact page -->
             <a href="about.html">About&nbsp&nbsp</a>
+            <!-- Navigation link to the about page -->
         </div>
     </div>
 
     <div class="contact-container">
+        <!-- Container for the contact form -->
         <h2>Contact Me</h2>
+        <!-- Heading for the contact section -->
         <form id="contact-form">
+            <!-- Contact form starts here -->
             <div class="form-group">
+                <!-- Form group for name input -->
                 <label for="name">Name</label>
+                <!-- Label for the name field -->
                 <input type="text" id="name" name="name" required>
+                <!-- Text input for name, marked as required -->
             </div>
             <div class="form-group">
+                <!-- Form group for email input -->
                 <label for="email">Email</label>
+                <!-- Label for the email field -->
                 <input type="email" id="email" name="email" required>
+                <!-- Email input, marked as required -->
             </div>
             <div class="form-group">
+                <!-- Form group for subject input -->
                 <label for="subject">Subject</label>
+                <!-- Label for the subject field -->
                 <input type="text" id="subject" name="subject" required>
+                <!-- Text input for subject, marked as required -->
             </div>
             <div class="form-group">
+                <!-- Form group for message textarea -->
                 <label for="message">Message</label>
+                <!-- Label for the message field -->
                 <textarea id="message" name="message" required></textarea>
+                <!-- Textarea for message, marked as required -->
             </div>
             <button type="submit">Send Message</button>
+            <!-- Button to submit the form -->
         </form>
     </div>
 
-
     <script src="script.js"></script>
+    <!-- Link to an external JavaScript file -->
 </body>
+<!-- End of the body -->
 
 </html>
+<!-- End of the HTML document -->
