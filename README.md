@@ -33,7 +33,7 @@ Form Stages
 Form Navigation
 
     Navigation buttons to move between form stages.
-    Ability for users to go back and forth to review and edit their entries.
+    The ability for users to go back and forth to review and edit their entries.
 
 Form Validation
 
@@ -49,7 +49,10 @@ Form Submission
 
 Usage
 
-To start the application, open the link provided below in any modern web browser. Navigate through the application process by filling out the forms and following the on-screen instructions. Be sure to have prompts or pop-out windows enabled in your web browser settings.
+To start the application, open the link below in any modern web browser. Navigate through the application process by completing the forms and following the on-screen instructions. Be sure to enable prompts or pop-out windows in your web browser settings.
+Upon opening the live link, the user is welcomed you the animated home page, giving off the space aesthetic. There is an "Apply Now" button where the user can begin their application. At the top of the website, the user can see various buttons; "Home", "Apply Now", "Contact", and "About". The "Home" button simply redirects the user back to the home page, where they were first welcomed. The "Apply Now" button acts the same as the "Apply Now" button seen in the center of the screen on the animation. This page directs you to the application page, where the user can begin entering their details and information to be later reviewed by the recruitment team. The "Contact" page, allows the user to report issues, or ask questions to the company or organization running the project. Feedback is crucial. Lastly, the "About" page, gives allows the user to learn a little about me, Ankit.
+
+Note that the "organization" and "recruitment team" are fictional, and the website functionality is strictly front-end based.
 
 License
 
@@ -66,3 +69,4 @@ an-m1.github.io/MarsApplicationWebsite/
 
 Developed by Ankit Modhera.
 Project Version 1.0
+Nov. 12, 2023
