@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Multi-Stage Application Form</title>
+    <style>
+        body {
+            background-image: url('https://github.com/an-m1/an-m1.github.io/blob/main/astronaut.gif?raw=true');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <!-- <a href="#default" id="logo">Mars</a> -->
+        <span id="logo">Mars</span>
+        <div id="navbar-right">
+            <a class="active" href="index.html">Home</a>
+            <a href="apply.html">Apply</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About&nbsp&nbsp</a>
+        </div>
+    </div>
+
+    <!-- Apply Now Button -->
+    <button id="applyButton">Apply Now</button>
+    <script>
+        document.getElementById('applyButton').onclick = function() {
+            window.location.href = 'apply.html';
+        };
+    </script>
+    
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

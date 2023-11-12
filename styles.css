@@ -1,0 +1,329 @@
+/* Basic Reset */
+body,
+h1,
+form,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 180px;
+  /* Adjust this value as needed to make tabs visible */
+}
+
+/* Form styles */
+.form-stage {
+  display: none;
+}
+
+.form-stage.active {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Navbar CSS */
+#navbar {
+  overflow: hidden;
+  /* background-color: #f1f1f1; */
+  background-color: hsla(256, 64%, 27%, 1);
+  padding: 90px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  transition: padding 0.3s, font-size 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+  transition: padding 0.3s, font-size 0.3s;
+  margin-right: 5px;
+}
+
+#navbar #logo {
+  color: white;
+  font-size: 90px;
+  font-weight: bold;
+  transition: 0.4s;
+  transition: padding 0.3s, font-size 0.3s;
+  margin-left: 50px;
+  flex-grow: 1;
+  text-align: center;
+  padding: auto;
+  padding-right: 40px;
+}
+
+
+#navbar a:hover {
+  background-color: rgb(153, 153, 255);
+  color: black;
+}
+
+#navbar a.active {
+  background-color: hsla(290, 100%, 73%, 1);
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  #navbar-right {
+    float: none;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+
+  }
+}
+
+
+/* Style the tab */
+.tab {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  margin-top: 50px;
+  text-align: center;
+  transition: top 0.3s;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  /* float: left; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s;
+  /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Style inputs */
+input[type=text],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the personalInformation next button */
+input[type=submit] {
+  width: 100%;
+  background-color: hsla(290, 100%, 73%, 1);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: hsla(290, 100%, 73%, 1);
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.date,
+.country {
+  display: block;
+}
+
+b {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+b:hover {
+  background-color: hsla(290, 100%, 73%, 1);
+  color: white;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+/* Style for Special Requests Textarea */
+#specialRequests {
+  width: 100%;
+  /* Full width to match input fields */
+  padding: 12px 20px;
+  /* Padding to match input fields */
+  margin: 8px 0;
+  /* Margin to match input fields */
+  display: inline-block;
+  /* Inline-block like other form elements */
+  border: 1px solid #ccc;
+  /* Border to match input fields */
+  border-radius: 4px;
+  /* Border radius to match input fields */
+  box-sizing: border-box;
+  /* Box-sizing to match input fields */
+  resize: none;
+  /* Disable resizing */
+  font-family: Arial, sans-serif;
+}
+
+#medicalConditions {
+  width: 100%;
+  /* Full width to match input fields */
+  padding: 12px 20px;
+  /* Padding to match input fields */
+  margin: 8px 0;
+  /* Margin to match input fields */
+  display: inline-block;
+  /* Inline-block like other form elements */
+  border: 1px solid #ccc;
+  /* Border to match input fields */
+  border-radius: 4px;
+  /* Border radius to match input fields */
+  box-sizing: border-box;
+  /* Box-sizing to match input fields */
+  resize: none;
+  /* Disable resizing */
+  font-family: Arial, sans-serif;
+}
+
+#addmore {
+  width: 25%;
+  background-color: #f1f1f1;
+  color: rgb(0, 0, 0);
+  padding: 14px 20px;
+  /* margin: 8px 0; */
+  margin: 8px auto;
+  /* Center horizontally */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center auto;
+  display: block;
+  margin-bottom: 10px;
+
+}
+
+/* Change background color of buttons on hover */
+#addmore:hover {
+  background-color: hsla(290, 100%, 73%, 1);
+}
+
+#applyButton {
+  position: fixed;
+  /* Fixed position */
+  top: 85%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Adjust the exact center */
+  border-radius: 20%;
+  /* Round shape */
+  padding: 10px 20px;
+  /* Padding inside the button */
+  background-color: transparent;
+  color: white;
+  /* Text color */
+  border: none;
+  /* No border */
+  cursor: pointer;
+  /* Cursor changes to a hand icon */
+  font-size: 50px;
+  /* Font size */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+}
+
+#applyButton:hover {
+  background-color: transparent;
+  /* Slightly darker shade on hover */
+  color: rgb(153, 153, 255);
+}
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Multi-Stage Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div id="navbar">
+        <span id="logo">Mars</span>
+        <div id="navbar-right">
+            <a href="index.html">Home</a>
+            <!-- <a href="#apply">Apply</a> -->
+            <a class="active" href="apply.html">Apply</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About&nbsp&nbsp</a>
+        </div>
+    </div>
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'PersonalInformation')" id="defaultOpen">Personal
+            Information</button>
+        <button class="tablinks" onclick="openTab(event, 'TravelPreferences')">Travel Preferences</button>
+        <button class="tablinks" onclick="openTab(event, 'HealthAndSafety')">Health and Safety</button>
+    </div>
+  
+    <!-- Tab content -->
+    <div id="PersonalInformation" class="tabcontent">
+        <h3>Personal Information</h3>
+
+        <form action="/submit_personal_information.php" onsubmit="return validateFormPersonal()">
+            <!-- <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
+
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name.." required
+                pattern="[a-zA-Z\s]+">
+
+            <div id="date">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div>
+                <label for="nationalitySelect">Nationality</label>
+                <select id="nationalitySelect" name="nationality" onchange="toggleOtherNationalityField()" required>
+                    <!-- ... nationality options ... -->
+                    <option value="" disabled selected>Select a nationality</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Indian">Indian</option>
+                    <option value="American">American</option>
+                    <option value="Indonesian">Indonesian</option>
+                    <option value="Pakistani">Pakistani</option>
+                    <option value="Brazilian">Brazilian</option>
+                    <option value="Nigerian">Nigerian</option>
+                    <option value="Bangladeshi">Bangladeshi</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div id="otherNationalityField" style="display:none;">
+                <label for="otherNationality">Please specify your nationality</label>
+                <input type="text" id="otherNationality" name="otherNationality">
+            </div>
+
+            <script>
+                function toggleOtherNationalityField() {
+                    var nationalitySelect = document.getElementById('nationalitySelect').value;
+                    var otherField = document.getElementById('otherNationalityField');
+                    if (nationalitySelect === 'Other') {
+                        otherField.style.display = 'block';
+                    } else {
+                        otherField.style.display = 'none';
+                    }
+                }
+            </script>
+
+
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email.." required>
+
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" placeholder="Your phone number.." required pattern="[+\d\s()-]+">
+
+    </form>
+            <input type="submit" value="Next" onclick="openTab(null, 'TravelPreferences')">
+    
+    </div>
+
+    <div id="TravelPreferences" class="tabcontent">
+        <h3>Travel Preferences</h3>
+
+        <!--  the action attribute in the form tag points to 
+            the correct server-side script or URL where you want 
+            to process or store the form data. -->
+        <form action="/submit_travel_details.php" onsubmit="return validateFormTravel()">
+            <div>
+                <label for="departureDate">Departure Date</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+            </div>
+
+            <div>
+                <label for="returnDate">Return Date</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+            </div>
+
+            <div>
+                <label for="accommodationPreference">Accommodation Preference</label>
+                <select id="accommodationPreference" name="accommodationPreference" required>
+                    <option value="" disabled selected>-</option>
+                    <option value="Space Hotel">Space Hotel</option>
+                    <option value="Martian Base">Martian Base</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="specialRequests">Special Requests or Preferences</label>
+                <textarea id="specialRequests" name="specialRequests"
+                    placeholder="Enter any special requests or preferences here..."></textarea>
+            </div>
+
+        </form>
+        <!-- Previous button -->
+        <b href="#" class="previous" onclick="openTab(null, 'PersonalInformation')">&laquo; Previous</b>
+        <!-- Next button -->
+        <b href="#" class="next" onclick="openTab(null, 'HealthAndSafety')">Next &raquo;</b>
+        <!-- Previous button Arrow -->
+        <b href="#" class="previous round" onclick="openTab(null, 'PersonalInformation')">&#8249;</b>
+        <!-- Next button Arrow -->
+        <b href="#" class="next round" onclick="openTab(null, 'HealthAndSafety')">&#8250;</b>
+    </div>
+
+    <div id="HealthAndSafety" class="tabcontent">
+        <h3>Health and Safety</h3>
+        <form action="/submit_health_details.php" onsubmit="return validateFormHealth()">
+            <!-- Health Declaration -->
+            <label for="healthDeclaration">Health Declaration:</label><br>
+            <input type="radio" id="healthYes" name="healthDeclaration" value="Yes">
+            <label for="healthYes">Yes</label><br>
+            <input type="radio" id="healthNo" name="healthDeclaration" value="No">
+            <label for="healthNo">No</label><br>
+
+            <!-- Emergency Contact Information -->
+            <div id="emergencyContacts">
+                <h4>Emergency Contact 1:</h4>
+                <div class="emergencyContact">
+                    <label for="contact1FirstName">First Name:</label>
+                    <input type="text" id="contact1FirstName" name="contact1FirstName" required>
+
+                    <label for="contact1LastName">Last Name:</label>
+                    <input type="text" id="contact1LastName" name="contact1LastName" required>
+
+                    <label for="contact1Phone">Phone Number:</label>
+                    <input type="text" id="contact1Phone" name="contact1Phone" required pattern="[+\d\s()-]+">
+
+                    <label for="contact1Street">Street:</label>
+                    <input type="text" id="contact1Street" name="contact1Street" required>
+
+                    <label for="contact1City">City:</label>
+                    <input type="text" id="contact1City" name="contact1City" required>
+
+                    <!-- Emergency Contact's Country -->
+                    <div>
+                        <label for="countrySelect">Country</label>
+                        <select id="countrySelect" name="country" onchange="toggleFields()" required>
+                            <!-- ... country options ... -->
+                            <option value="" disabled selected>Select a country</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Canada">Canada</option>
+                            <option value="China">China</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="United States">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div id="otherCountryField" style="display:none;">
+                        <label for="otherCountry">Please specify your country</label>
+                        <input type="text" id="otherCountry" name="otherCountry">
+                    </div>
+                    <!-- State/Province/Territory Selection -->
+                    <div id="stateField" style="display:none;">
+                        <label for="stateSelect">State/Province/Territory</label>
+                        <select id="stateSelect" name="state">
+                            <!-- State options will be populated based on the country selected -->
+                        </select>
+                        <input type="text" id="otherState" name="otherState" style="display:none;">
+                    </div>
+
+                </div>
+            </div>
+
+            <button id=addmore type="button" onclick="addEmergencyContact()">Add More</button>
+
+            <!-- Script for adding more emergency contacts -->
+            <script>
+                var contactCount = 1;
+
+                function addEmergencyContact() {
+                    contactCount++;
+                    var container = document.getElementById("emergencyContacts");
+                    var contactDiv = document.createElement("div");
+                    var heading = document.createElement("h4");
+                    heading.textContent = "Emergency Contact " + contactCount + ":";
+                    contactDiv.appendChild(heading);
+                    contactDiv.className = "emergencyContact";
+                    contactDiv.innerHTML += document.querySelector(".emergencyContact").innerHTML;
+                    container.appendChild(contactDiv);
+                }
+            </script>
+
+            <div>
+                <!-- Medical Conditions -->
+                <label for="medicalConditions">Any Medical Conditions (if applicable):</label>
+                <textarea id="medicalConditions" name="medicalConditions" placeholder="Describe any medical conditions"
+                    rows="3"></textarea>
+            </div>
+        </form>
+        <!-- Previous button Arrow -->
+        <b href="#" class="previous round" onclick="openTab(null, 'TravelPreferences')">&#8249;</b>
+       
+        <!-- Previous button -->
+        <b href="#" class="previous" onclick="openTab(null, 'TravelPreferences')">&laquo; Previous</b>
+        <!-- Next button -->
+        <!-- <b href="#" class="next" onclick="openTab(null, 'HealthAndSafety')">Submit &raquo;</b> -->
+        <input type="submit" value="Submit" onclick="return finalSubmit()">
+        
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
