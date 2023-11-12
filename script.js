@@ -1,3 +1,4 @@
+// Function to switch to the next stage in a multi-stage form
 function nextStage(next) {
   // Hide all stages
   var stages = document.querySelectorAll('.form-stage');
@@ -15,6 +16,8 @@ function nextStage(next) {
 // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
 window.onscroll = function () { scrollFunction() };
 
+// If the user has scrolled down 80px from the top, resize the navbar and logo
+// Else reset navbar and logo to original size when not scrolled down
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("navbar").style.padding = "30px 10px";
@@ -24,19 +27,24 @@ function scrollFunction() {
     document.getElementById("logo").style.fontSize = "35px";
   }
 }
+
+// Function to handle tab switching in a tabbed interface
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
 
+  // Hide all tab content
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
 
+  // Remove 'active' class from all tabs
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-
+  
+// Show the current tab and add 'active' class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
   if (evt && evt.currentTarget) {
     evt.currentTarget.className += " active";
@@ -46,6 +54,7 @@ function openTab(evt, tabName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
+// Function to handle form submission for personal information
 function submitPersonalInformation() {
 
   // Now switch to the Travel Preferences tab
@@ -55,6 +64,7 @@ function submitPersonalInformation() {
   return false;
 }
 
+// Function to toggle fields based on country selection
 function toggleFields() {
   var countrySelect = document.getElementById('countrySelect').value;
   var otherCountryField = document.getElementById('otherCountryField');
@@ -119,6 +129,7 @@ if (countrySelect === 'Canada') {
   }
 }
 
+// Function to populate the state dropdown based on the given array of states
 function populateStates(statesArray) {
   var stateSelect = document.getElementById('stateSelect');
   stateSelect.innerHTML = ''; // Clear existing options
@@ -131,8 +142,12 @@ function populateStates(statesArray) {
 }
 
 
-
+// Function to validate the personal information form
 function validateFormPersonal() {
+  // The following validations check for full name, date of birth, nationality, email, and phone number
+  // Each field is validated according to specific criteria
+  // Returns true if all validations pass, otherwise false
+  
   // Validate Full Name
   var fullName = document.getElementById('fullname').value;
   if (!fullName.match(/^[a-zA-Z\s]*$/)) {
@@ -181,7 +196,11 @@ function validateFormPersonal() {
   return true;
 }
 
+// Function to validate the travel information form
 function validateFormTravel() {
+ // Validates departure date, return date, and accommodation preference
+  // Returns true if all validations pass, otherwise false
+  
   // Validate Departure Date (must be in the future)
   var departureDate = new Date(document.getElementById('departureDate').value);
   var today = new Date();
@@ -207,8 +226,11 @@ function validateFormTravel() {
   return true;
 }
 
-
+// Function to validate the health information form
 function validateFormHealth() {
+  // Validates health declaration and emergency contact information
+  // Returns true if all validations pass, otherwise false
+  
   // Validate Health Declaration
   var healthYes = document.getElementById('healthYes').checked;
   var healthNo = document.getElementById('healthNo').checked;
@@ -256,24 +278,31 @@ function validateFormHealth() {
   return true;
 }
 
-
+// Utility function to validate email format
 function isEmailValid(email) {
   var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return regex.test(email);
 }
 
+// Utility function to validate phone number format
 function isPhoneValid(phone) {
   var regex = /^\d{10}$/;
   return regex.test(phone);
 }
 
+// Utility function to check if a date is in the past
 function isDateInPast(date) {
   var today = new Date();
   var inputDate = new Date(date);
   return inputDate < today;
 }
 
+// Function to handle the final submission of the form
 function finalSubmit() {
+  // Validates all sections of the form
+  // Displays a success message if all validations pass, otherwise an error message
+  // Returns true if all validations pass, otherwise false
+  
   // Perform final validation check for all forms
   if (validateFormPersonal() && validateFormTravel() && validateFormHealth()) {
       alert("Application Submitted Successfully!");
