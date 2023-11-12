@@ -68,5 +68,5 @@ Final Project Link
 an-m1.github.io/MarsApplicationWebsite/
 
 Developed by Ankit Modhera.
-Project Version 1.0
+Project Version 1.01
 Nov. 12, 2023
