@@ -208,7 +208,52 @@
                 <div class="emergencyContact">
                     <!-- Container for each emergency contact's details -->
                     <!-- Input fields for emergency contact's information -->
-                    <!-- ... -->
+                          <label for="contact1FirstName">First Name:</label>
+                    <input type="text" id="contact1FirstName" name="contact1FirstName" required>
+
+                    <label for="contact1LastName">Last Name:</label>
+                    <input type="text" id="contact1LastName" name="contact1LastName" required>
+
+                    <label for="contact1Phone">Phone Number:</label>
+                    <input type="text" id="contact1Phone" name="contact1Phone" required pattern="[+\d\s()-]+">
+
+                    <label for="contact1Street">Street:</label>
+                    <input type="text" id="contact1Street" name="contact1Street" required>
+
+                    <label for="contact1City">City:</label>
+                    <input type="text" id="contact1City" name="contact1City" required>
+
+                    <!-- Emergency Contact's Country -->
+                    <div>
+                        <label for="countrySelect">Country</label>
+                        <select id="countrySelect" name="country" onchange="toggleFields()" required>
+                            <!-- ... country options ... -->
+                            <option value="" disabled selected>Select a country</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Canada">Canada</option>
+                            <option value="China">China</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="United States">United States</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div id="otherCountryField" style="display:none;">
+                        <label for="otherCountry">Please specify your country</label>
+                        <input type="text" id="otherCountry" name="otherCountry">
+                    </div>
+                    <!-- State/Province/Territory Selection -->
+                    <div id="stateField" style="display:none;">
+                        <label for="stateSelect">State/Province/Territory</label>
+                        <select id="stateSelect" name="state">
+                            <!-- State options will be populated based on the country selected -->
+                        </select>
+                        <input type="text" id="otherState" name="otherState" style="display:none;">
+                    </div>
+
                 </div>
             </div>
 
