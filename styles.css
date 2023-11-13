@@ -66,7 +66,7 @@ button {
 /* Styles for the navbar logo, including font size and color */
 #navbar #logo {
   color: white;
-  font-size: 90px;
+  font-size: 60px;
   font-weight: bold;
   transition: 0.4s;
   transition: padding 0.3s, font-size 0.3s;
