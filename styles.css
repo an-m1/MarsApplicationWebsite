@@ -70,7 +70,7 @@ button {
   font-weight: bold;
   transition: 0.4s;
   transition: padding 0.3s, font-size 0.3s;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   flex-grow: 1;
   text-align: center;
   padding: auto;
